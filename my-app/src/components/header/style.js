@@ -1,24 +1,21 @@
-import { StyleSheet } from 'react-native';
+import styled from 'styled-components/native';
 
-export const styles = StyleSheet.create({
-    header: {
-        width: '100%',
-        paddingTop: 20,
-        paddingBottom: 10,
-        paddingLeft: 10,
-        zIndex: 2,
-        position: 'absolute',
-        elevation: 10,
-        flexDirection: 'row',
-        alignItems: 'center',
-        backgroundColor: '#f2f2f2',
-    },
+export const Container = styled.View`
+    width: 100%;
+    padding: 10px;
+    z-index: 1;
+    position: absolute;
+    flex-direction: row;
+    align-items: center;
+`;
 
-    img: {
-        width: 50,
-        height: 50,
-        marginLeft: 10,
-        marginRight: 10,
-        borderRadius: 10,
-    },
-});
+export const Img = styled.Image`
+    width: 50px;
+    height: 50px;
+    margin: 0px 10px;
+    border-radius: 10px;
+`;
+
+export const Title = styled.Text`
+    font-size: 22px;
+`;

@@ -1,74 +1,62 @@
-import { StyleSheet } from 'react-native';
+import styled from 'styled-components/native';
 
-export const styles = StyleSheet.create({
-    main: {
-        width: '100%',
-        height: '100%',
-        paddingTop: 80,
-        backgroundColor: '#f2f2f2',
-    },
+export const Container = styled.View`
+    width: 100%;
+    height: 100%;
+    padding-top: 70px;
+    background-color: #f2f2f2;
+`;
 
-    foodOption: {
-        width: '90%',
-        marginTop: 10,
-        marginLeft: 'auto',
-        marginRight: 'auto',
-        shadowColor: '#171717',
-    },
+export const FoodOption = styled.View`
+    width: 90%;
+    padding-top: 5px;
+    margin: 0px auto;
+`;
 
-    lastFoodOption: {
-        width: '90%',
-        marginTop: 10,
-        marginBottom: 120,
-        marginLeft: 'auto',
-        marginRight: 'auto',
-        elevation: 10,
-        shadowColor: '#171717',
-    },
+export const LastFoodOption = styled.View`
+    width: 90%;
+    margin: 10px auto 125px auto;
+`;
 
-    title: {
-        paddingTop: 10,
-        paddingBottom: 10,
-        paddingLeft: 10,
-        borderTopLeftRadius: 5,
-        borderTopRightRadius: 5,
-        fontSize: 18,
-        backgroundColor: '#000000',
-        color: '#f2f2f2',
-    },
+export const Title = styled.Text`
+    padding: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    font-size: 22px;
+    background-color: #000000;
+    color: #f2f2f2;
+`;
 
-    containerCount: {
-        marginTop: 1,
-        paddingTop: 10,
-        paddingBottom: 10,
-        borderBottomLeftRadius: 5,
-        borderBottomRightRadius: 5,
-        flexDirection: 'row',
-        backgroundColor: '#000000',
-    },
+export const ContainerCount = styled.View`
+    margin-top: 1px;
+    padding: 10px 0px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    flex-direction: row;
+    align-items: center;
+    background-color: #000000;
+`;
 
-    viewHidden: {
-        display: 'none',
-    },
+export const Count = styled.Text`
+    font-size: 18px;
+    color: #f2f2f2;
+`;
 
-    count: {
-        fontSize: 16,
-        color: '#f2f2f2',
-    },
+export const Price = styled.Text`
+    font-size: 20px;
+    color: #f2f2f2;
+`;
 
-    value: {
-        fontSize: 16,
-        color: '#f2f2f2',
-    },
+export const Button = styled.TouchableOpacity`
+    width: 35px;
+    height: 35px;
+    margin: 0px 10px;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    background-color: #f2f2f2;
+`;
 
-    button: {
-        width: 20,
-        height: 20,
-        marginLeft: 10,
-        marginRight: 10,
-        borderRadius: 5,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#fff',
-    },
-});
+export const ButtonText = styled.Text`
+    font-size: 30px;
+`;
