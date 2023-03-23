@@ -1,8 +1,8 @@
 import React from 'react';
-import { View, ScrollView } from 'react-native';
+import { ScrollView } from 'react-native';
 import PropTypes from 'prop-types';
 
-import { styles } from '../styles/style';
+import { Container } from '../styles/style';
 
 import MistoQuente from '../components/mistoQuente/index.js';
 import Torta from '../components/torta/index.js';
@@ -28,8 +28,8 @@ export default function Home({
     paoChapaPrice,
 }) {
     return (
-        <View style={styles.main}>
-            <ScrollView style={styles.ScrollView}>
+        <Container>
+            <ScrollView>
                 <MistoQuente valuePrice={mistoQuentePrice} />
 
                 <Torta valuePrice={tortaPrice} />
@@ -50,6 +50,6 @@ export default function Home({
 
                 <PaoChapa valuePrice={paoChapaPrice} />
             </ScrollView>
-        </View>
+        </Container>
     );
 }

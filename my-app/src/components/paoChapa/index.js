@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
 
-import { styles } from '../../styles/style';
+import { LastFoodOption, Title, Button, ButtonText, ContainerCount, Count, Price } from '../../styles/style';
 
 export default function PaoChapa({ valuePrice }) {
     const [count, setCount] = useState(0);
@@ -34,22 +33,22 @@ export default function PaoChapa({ valuePrice }) {
     }, [price]);
 
     return (
-        <View style={styles.lastFoodOption}>
-            <Text style={styles.title}>Pão Chapa</Text>
+        <LastFoodOption>
+            <Title>Pão Chapa</Title>
 
-            <View style={styles.containerCount}>
-                <TouchableOpacity style={styles.button} onPress={() => handleClickUp()}>
-                    <Text>+</Text>
-                </TouchableOpacity>
+            <ContainerCount>
+                <Button onPress={() => handleClickUp()}>
+                    <ButtonText>+</ButtonText>
+                </Button>
 
-                <Text style={styles.count}>{count}</Text>
+                <Count>{count}</Count>
 
-                <TouchableOpacity style={styles.button} onPress={() => handleClickDown()}>
-                    <Text>-</Text>
-                </TouchableOpacity>
+                <Button onPress={() => handleClickDown()}>
+                    <ButtonText>-</ButtonText>
+                </Button>
 
-                <Text style={styles.value}>R${price.toFixed(2).replace('.', ',')}</Text>
-            </View>
-        </View>
+                <Price>R${price.toFixed(2).replace('.', ',')}</Price>
+            </ContainerCount>
+        </LastFoodOption>
     );
 }
