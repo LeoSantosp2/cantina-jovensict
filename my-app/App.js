@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, StatusBar } from 'react-native';
 
 import Header from './src/components/header';
 import Home from './src/Home';
@@ -84,6 +84,8 @@ export default function App() {
                 cafeTotal={cafePrice}
                 paoChapaTotal={paoChapaPrice}
             />
+
+            <StatusBar barStyle="default" />
         </View>
     );
 }
