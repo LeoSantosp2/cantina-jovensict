@@ -19,12 +19,18 @@ export const LastFoodOption = styled.View`
 `;
 
 export const Title = styled.Text`
+    margin-left: 10px;
+    font-size: 22px;
+    color: #f2f2f2;
+`;
+
+export const ContainerTitle = styled.View`
     padding: 10px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-    font-size: 22px;
+    flex-direction: row;
+    align-items: center;
     background-color: #000000;
-    color: #f2f2f2;
 `;
 
 export const ContainerCount = styled.View`
