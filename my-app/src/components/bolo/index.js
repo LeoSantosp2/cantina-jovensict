@@ -1,6 +1,16 @@
 import React, { useState, useEffect } from 'react';
+import Icon from 'react-native-vector-icons/Entypo';
 
-import { FoodOption, Title, Button, ButtonText, ContainerCount, Count, Price } from '../../styles/style';
+import {
+    FoodOption,
+    Title,
+    Button,
+    ButtonText,
+    ContainerCount,
+    Count,
+    Price,
+    ContainerTitle,
+} from '../../styles/style';
 
 export default function Bolo({ valuePrice }) {
     const [count, setCount] = useState(0);
@@ -34,7 +44,10 @@ export default function Bolo({ valuePrice }) {
 
     return (
         <FoodOption>
-            <Title>Bolo</Title>
+            <ContainerTitle>
+                <Icon name="cake" size={24} color="#f2f2f2" />
+                <Title>Bolo</Title>
+            </ContainerTitle>
 
             <ContainerCount>
                 <Button onPress={() => handleClickUp()}>

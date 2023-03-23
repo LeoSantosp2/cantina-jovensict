@@ -1,6 +1,16 @@
 import React, { useState, useEffect } from 'react';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-import { FoodOption, Title, Button, ButtonText, ContainerCount, Count, Price } from '../../styles/style';
+import {
+    FoodOption,
+    Title,
+    Button,
+    ButtonText,
+    ContainerCount,
+    Count,
+    Price,
+    ContainerTitle,
+} from '../../styles/style';
 
 export default function BoloCobertura({ valuePrice }) {
     const [count, setCount] = useState(0);
@@ -34,7 +44,10 @@ export default function BoloCobertura({ valuePrice }) {
 
     return (
         <FoodOption>
-            <Title>Bolo Cobertura</Title>
+            <ContainerTitle>
+                <Icon name="cake" size={24} color="#f2f2f2" />
+                <Title>Bolo Cobertura</Title>
+            </ContainerTitle>
 
             <ContainerCount>
                 <Button onPress={() => handleClickUp()}>

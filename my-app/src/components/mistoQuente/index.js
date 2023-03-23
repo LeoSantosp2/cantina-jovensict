@@ -1,7 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
-import { FoodOption, Title, Button, ButtonText, ContainerCount, Count, Price } from '../../styles/style';
+import {
+    FoodOption,
+    Title,
+    Button,
+    ButtonText,
+    ContainerCount,
+    Count,
+    Price,
+    ContainerTitle,
+} from '../../styles/style';
 
 export default function MistoQuente({ valuePrice }) {
     const [count, setCount] = useState(0);
@@ -35,7 +45,10 @@ export default function MistoQuente({ valuePrice }) {
 
     return (
         <FoodOption>
-            <Title>Misto Quente</Title>
+            <ContainerTitle>
+                <Icon name="lunch-dining" size={24} color="#f2f2f2" />
+                <Title>Misto Quente</Title>
+            </ContainerTitle>
 
             <ContainerCount>
                 <Button onPress={() => handleClickUp()}>

@@ -1,6 +1,16 @@
 import React, { useState, useEffect } from 'react';
+import Icon from 'react-native-vector-icons/Feather';
 
-import { FoodOption, Title, Button, ButtonText, ContainerCount, Count, Price } from '../../styles/style';
+import {
+    FoodOption,
+    Title,
+    Button,
+    ButtonText,
+    ContainerCount,
+    Count,
+    Price,
+    ContainerTitle,
+} from '../../styles/style';
 
 export default function Cafe({ valuePrice }) {
     const [count, setCount] = useState(0);
@@ -34,7 +44,10 @@ export default function Cafe({ valuePrice }) {
 
     return (
         <FoodOption>
-            <Title>Café</Title>
+            <ContainerTitle>
+                <Icon name="coffee" size={24} color="#f2f2f2" />
+                <Title>Café</Title>
+            </ContainerTitle>
 
             <ContainerCount>
                 <Button onPress={() => handleClickUp()}>

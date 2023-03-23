@@ -1,6 +1,16 @@
 import React, { useState, useEffect } from 'react';
+import Icon from 'react-native-vector-icons/FontAwesome5';
 
-import { LastFoodOption, Title, Button, ButtonText, ContainerCount, Count, Price } from '../../styles/style';
+import {
+    LastFoodOption,
+    Title,
+    Button,
+    ButtonText,
+    ContainerCount,
+    Count,
+    Price,
+    ContainerTitle,
+} from '../../styles/style';
 
 export default function PaoChapa({ valuePrice }) {
     const [count, setCount] = useState(0);
@@ -34,7 +44,10 @@ export default function PaoChapa({ valuePrice }) {
 
     return (
         <LastFoodOption>
-            <Title>Pão Chapa</Title>
+            <ContainerTitle>
+                <Icon name="bread-slice" size={24} color="#f2f2f2" />
+                <Title>Pão na Chapa</Title>
+            </ContainerTitle>
 
             <ContainerCount>
                 <Button onPress={() => handleClickUp()}>
