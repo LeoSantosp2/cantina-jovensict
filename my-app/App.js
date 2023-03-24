@@ -1,5 +1,6 @@
+import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { StyleSheet, View, StatusBar } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 import Header from './src/components/header';
 import Home from './src/Home';
@@ -85,7 +86,7 @@ export default function App() {
                 paoChapaTotal={paoChapaPrice}
             />
 
-            <StatusBar barStyle="default" />
+            <StatusBar style="auto" />
         </View>
     );
 }
