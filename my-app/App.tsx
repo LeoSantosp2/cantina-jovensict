@@ -1,9 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { View } from 'react-native';
 
 import Header from './src/components/header';
-import Home from './src/Home';
+import Home from './src/containers/home';
 import Footer from './src/components/footer';
 
 export default function App() {
@@ -18,48 +18,48 @@ export default function App() {
     const [cafePrice, setCafePrice] = useState(0);
     const [paoChapaPrice, setPaoChapaPrice] = useState(0);
 
-    function handleMistoQuenteTotalPrice(price) {
+    function handleMistoQuenteTotalPrice(price: number) {
         setMistoQuenteTotalPrice(price);
     }
 
-    function handleTortaTotalPrice(price) {
+    function handleTortaTotalPrice(price: number) {
         setTortaTotalPrice(price);
     }
 
-    function handlePaoDeQueijoTotalPrice(price) {
+    function handlePaoDeQueijoTotalPrice(price: number) {
         setPaoDeQueijoPrice(price);
     }
 
-    function handleBoloTotalPrice(price) {
+    function handleBoloTotalPrice(price: number) {
         setBoloPrice(price);
     }
 
-    function handleBoloCoberturaTotalPrice(price) {
+    function handleBoloCoberturaTotalPrice(price: number) {
         setBoloCoberturaPrice(price);
     }
 
-    function handleSucoAchocolatadoTotalPrice(price) {
+    function handleSucoAchocolatadoTotalPrice(price: number) {
         setSucoAchocolatadoPrice(price);
     }
 
-    function handleRefriSucoLataTotalPrice(price) {
+    function handleRefriSucoLataTotalPrice(price: number) {
         setRefriSucoLataPrice(price);
     }
 
-    function handleCafeComLeiteTotalPrice(price) {
+    function handleCafeComLeiteTotalPrice(price: number) {
         setCafeComLeitePrice(price);
     }
 
-    function handleCafeTotalPrice(price) {
+    function handleCafeTotalPrice(price: number) {
         setCafePrice(price);
     }
 
-    function handlePaoChapaTotalPrice(price) {
+    function handlePaoChapaTotalPrice(price: number) {
         setPaoChapaPrice(price);
     }
 
     return (
-        <View style={styles}>
+        <View>
             <Header />
             <Home
                 mistoQuentePrice={handleMistoQuenteTotalPrice}
@@ -79,7 +79,7 @@ export default function App() {
                 paoDeQueijoTotal={paoDeQueijoPrice}
                 boloTotal={boloPrice}
                 boloCoberturaTotal={boloCoberturaPrice}
-                SucoAchocolatadoTotal={sucoAchocolatadoPrice}
+                sucoAchocolatadoTotal={sucoAchocolatadoPrice}
                 refriSucoLataTotal={refriSucoLataPrice}
                 cafeComLeiteTotal={cafeComLeitePrice}
                 cafeTotal={cafePrice}
@@ -90,12 +90,3 @@ export default function App() {
         </View>
     );
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-});
