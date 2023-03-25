@@ -62,6 +62,7 @@ const FoodOption: React.FC<Props> = ({ title, valuePrice, icon, _price }) => {
                 shadowOffset: { width: 3, height: 4 },
                 shadowOpacity: 0.5,
                 shadowRadius: 3,
+                elevation: 4,
             }}
         >
             <ContainerTitle>
