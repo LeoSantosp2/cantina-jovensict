@@ -1,12 +1,14 @@
 import styled from 'styled-components/native';
 
+import * as colors from '../../config/color';
+
 export const Container = styled.View`
     width: 100%;
     padding-left: 10px;
     position: absolute;
     bottom: 0%;
     z-index: 2;
-    background-color: #f2f2f2;
+    background-color: ${colors.white};
 `;
 
 export const Paymente = styled.View`
@@ -21,8 +23,8 @@ export const Input = styled.TextInput`
     margin: 10px;
     padding-left: 10px;
     border-radius: 5px;
-    background-color: #000000;
-    color: #f2f2f2;
+    background-color: ${colors.black};
+    color: ${colors.white};
 `;
 
 export const Button = styled.TouchableOpacity`
@@ -32,7 +34,7 @@ export const Button = styled.TouchableOpacity`
     border-radius: 4px;
     justify-content: center;
     align-items: center;
-    background-color: #000000;
+    background-color: ${colors.black};
 `;
 
 export const MoneyChange = styled.Text`

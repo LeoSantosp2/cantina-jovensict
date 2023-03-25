@@ -1,5 +1,7 @@
 import styled from 'styled-components/native';
 
+import * as colors from '../../config/color';
+
 export const ContainerFoodOption = styled.View`
     width: 90%;
     padding-top: 10px;
@@ -9,7 +11,7 @@ export const ContainerFoodOption = styled.View`
 export const Title = styled.Text`
     margin-left: 10px;
     font-size: 22px;
-    color: #f2f2f2;
+    color: ${colors.white};
 `;
 
 export const ContainerTitle = styled.View`
@@ -18,7 +20,7 @@ export const ContainerTitle = styled.View`
     border-top-right-radius: 5px;
     flex-direction: row;
     align-items: center;
-    background-color: #000000;
+    background-color: ${colors.black};
 `;
 
 export const ContainerCount = styled.View`
@@ -28,17 +30,17 @@ export const ContainerCount = styled.View`
     border-bottom-right-radius: 5px;
     flex-direction: row;
     align-items: center;
-    background-color: #000000;
+    background-color: ${colors.black};
 `;
 
 export const Count = styled.Text`
     font-size: 18px;
-    color: #f2f2f2;
+    color: ${colors.white};
 `;
 
 export const Price = styled.Text`
     font-size: 20px;
-    color: #f2f2f2;
+    color: ${colors.white};
 `;
 
 export const Button = styled.TouchableOpacity`
@@ -48,7 +50,7 @@ export const Button = styled.TouchableOpacity`
     border-radius: 5px;
     justify-content: center;
     align-items: center;
-    background-color: #f2f2f2;
+    background-color: ${colors.white};
 `;
 
 export const ButtonText = styled.Text`
@@ -62,10 +64,10 @@ export const ButtonDelete = styled.TouchableOpacity`
     border-radius: 5px;
     justify-content: center;
     align-items: center;
-    background-color: #f2f2f2;
+    background-color: ${colors.white};
 `;
 
 export const ButtonTextDelete = styled.Text`
     font-size: 18px;
-    color: #000000;
+    color: ${colors.black};
 `;

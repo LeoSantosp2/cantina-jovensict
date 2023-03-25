@@ -1,5 +1,7 @@
 import styled from 'styled-components/native';
 
+import * as colors from '../../config/color';
+
 export const Container = styled.View`
     width: 100%;
     margin-top: 27px;
@@ -8,7 +10,7 @@ export const Container = styled.View`
     position: absolute;
     flex-direction: row;
     align-items: center;
-    background-color: #f2f2f2;
+    background-color: ${colors.white};
 `;
 
 export const Img = styled.Image`
