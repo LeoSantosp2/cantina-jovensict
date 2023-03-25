@@ -1,21 +1,33 @@
 import React, { useState } from 'react';
 import { Text } from 'react-native';
-import PropTypes from 'prop-types';
 
 import { Container, Paymente, Input, Button, MoneyChange } from './style';
 
-export default function Footer({
+interface Props {
+    mistoQuenteTotal: number;
+    tortaTotal: number;
+    paoDeQueijoTotal: number;
+    boloTotal: number;
+    boloCoberturaTotal: number;
+    sucoAchocolatadoTotal: number;
+    refriSucoLataTotal: number;
+    cafeComLeiteTotal: number;
+    cafeTotal: number;
+    paoChapaTotal: number;
+}
+
+const Footer: React.FC<Props> = ({
     mistoQuenteTotal,
     tortaTotal,
     paoDeQueijoTotal,
     boloTotal,
     boloCoberturaTotal,
-    SucoAchocolatadoTotal,
+    sucoAchocolatadoTotal,
     refriSucoLataTotal,
     cafeComLeiteTotal,
     cafeTotal,
     paoChapaTotal,
-}) {
+}) => {
     const [payment, setPayment] = useState('');
     const [total, setTotal] = useState(0);
     const [change, setChange] = useState(0);
@@ -36,7 +48,7 @@ export default function Footer({
                 paoDeQueijoTotal +
                 boloTotal +
                 boloCoberturaTotal +
-                SucoAchocolatadoTotal +
+                sucoAchocolatadoTotal +
                 refriSucoLataTotal +
                 cafeComLeiteTotal +
                 cafeTotal +
@@ -73,4 +85,6 @@ export default function Footer({
             <MoneyChange>Troco: R${change.toFixed(2).replace('.', ',')}</MoneyChange>
         </Container>
     );
-}
+};
+
+export default Footer;
