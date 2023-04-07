@@ -120,7 +120,14 @@ export const ShowFoodOption = () => {
                     </ScrollView>
                 )}
                 keyExtractor={(item) => item.id}
-                style={{ marginBottom: 126 }}
+                style={{
+                    marginBottom: 126,
+                    shadowColor: '#000000',
+                    shadowOffset: { width: -2, height: 4 },
+                    shadowOpacity: 0.5,
+                    shadowRadius: 3,
+                    elevation: 20,
+                }}
             ></FlatList>
 
             <Footer />
