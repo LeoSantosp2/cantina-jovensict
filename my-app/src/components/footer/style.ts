@@ -7,7 +7,6 @@ export const Container = styled.View`
     padding-left: 10px;
     position: absolute;
     bottom: 0%;
-    z-index: 2;
     background-color: ${colors.white};
 `;
 
@@ -28,7 +27,7 @@ export const Input = styled.TextInput`
 `;
 
 export const Button = styled.TouchableOpacity`
-    width: 60px;
+    width: 70px;
     height: 30px;
     margin-right: 4px;
     border-radius: 4px;

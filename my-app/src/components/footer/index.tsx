@@ -1,39 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Text } from 'react-native';
+
+import { Context } from '../../context';
 
 import { Container, Paymente, Input, Button, MoneyChange } from './style';
 
-interface Props {
-    mistoQuenteTotal: number;
-    tortaTotal: number;
-    paoDeQueijoTotal: number;
-    boloTotal: number;
-    boloCoberturaTotal: number;
-    sucoAchocolatadoTotal: number;
-    refriSucoLataTotal: number;
-    cafeComLeiteTotal: number;
-    cafeTotal: number;
-    paoChapaTotal: number;
-}
-
-const Footer: React.FC<Props> = ({
-    mistoQuenteTotal,
-    tortaTotal,
-    paoDeQueijoTotal,
-    boloTotal,
-    boloCoberturaTotal,
-    sucoAchocolatadoTotal,
-    refriSucoLataTotal,
-    cafeComLeiteTotal,
-    cafeTotal,
-    paoChapaTotal,
-}) => {
+export default function Footer() {
     const [payment, setPayment] = useState('');
-    const [total, setTotal] = useState(0);
     const [change, setChange] = useState(0);
 
+    const { totalPrice } = useContext(Context);
+
     const handleClickCalculate = () => {
-        setChange(Number(payment) - total);
+        setChange(Number(payment) - totalPrice);
     };
 
     const handleClickDelete = () => {
@@ -41,23 +20,16 @@ const Footer: React.FC<Props> = ({
         setPayment('');
     };
 
-    setTimeout(() => {
-        setTotal(
-            mistoQuenteTotal +
-                tortaTotal +
-                paoDeQueijoTotal +
-                boloTotal +
-                boloCoberturaTotal +
-                sucoAchocolatadoTotal +
-                refriSucoLataTotal +
-                cafeComLeiteTotal +
-                cafeTotal +
-                paoChapaTotal,
-        );
-    }, 1);
-
     return (
-        <Container>
+        <Container
+            style={{
+                shadowColor: '#000000',
+                shadowOffset: { width: 3, height: 4 },
+                shadowOpacity: 0.3,
+                shadowRadius: 3,
+                elevation: 20,
+            }}
+        >
             <Paymente>
                 <Text style={{ fontSize: 22 }}>Pagamento:</Text>
 
@@ -78,13 +50,8 @@ const Footer: React.FC<Props> = ({
                 </Button>
             </Paymente>
 
-            <Text style={{ fontSize: 22 }}>
-                Total: R$
-                {total.toFixed(2).replace('.', ',')}
-            </Text>
+            <Text style={{ fontSize: 22 }}>Total: R${totalPrice.toFixed(2).replace('.', ',')}</Text>
             <MoneyChange>Troco: R${change.toFixed(2).replace('.', ',')}</MoneyChange>
         </Container>
     );
-};
-
-export default Footer;
+}
