@@ -1,6 +1,7 @@
 import React, { createContext, useState, ReactNode } from 'react';
 //import AsyncStorage from '@react-native-async-storage/async-storage';
 // import uuid from 'react-native-uuid';
+import Toast from 'react-native-toast-message';
 
 export const Context = createContext({});
 
@@ -48,6 +49,13 @@ const ContextProvider = ({ children }: Props) => {
         }
     };
 
+    const showToast = (text: string) => {
+        Toast.show({
+            type: 'success',
+            text1: text,
+        });
+    };
+
     return (
         <Context.Provider
             value={{
@@ -56,6 +64,7 @@ const ContextProvider = ({ children }: Props) => {
                 calcTotalPrice,
                 totalPrice,
                 deleteFoodOptions,
+                showToast,
             }}
         >
             {children}
