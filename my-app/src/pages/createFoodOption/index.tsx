@@ -1,4 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react';
+import Toast from 'react-native-toast-message';
 
 import { Context } from '../../context';
 
@@ -8,7 +9,7 @@ export default function CreateFoodOption() {
     const [foodName, setFoodName] = useState('');
     const [foodPrice, setFoodPrice] = useState('');
 
-    const { settingFoodOptions } = useContext(Context);
+    const { settingFoodOptions, showToast } = useContext(Context);
 
     useEffect(() => {
         let newFoodPrice = foodPrice;
@@ -19,12 +20,16 @@ export default function CreateFoodOption() {
 
     const handleClickAdd = () => {
         settingFoodOptions(foodName, Number(foodPrice));
+
         setFoodName('');
         setFoodPrice('');
+
+        showToast('Refeição cadastrada com sucesso!');
     };
 
     return (
         <Container>
+            <Toast />
             <InsertFood
                 style={{
                     shadowColor: '#000000',
