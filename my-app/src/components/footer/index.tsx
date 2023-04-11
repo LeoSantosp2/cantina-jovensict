@@ -1,18 +1,19 @@
 import React, { useState, useContext } from 'react';
-import { Text } from 'react-native';
 
 import { Context } from '../../context';
 
-import { Container, Paymente, Input, Button, MoneyChange } from './style';
+import { Container, Payment, Input, Button, Text, ButtonText } from './style';
 
 export default function Footer() {
     const [payment, setPayment] = useState('');
     const [change, setChange] = useState(0);
+    const [total, setTotal] = useState(0);
 
     const { totalPrice } = useContext(Context);
 
-    const handleClickCalculate = () => {
+    const handleClickCalculate = async () => {
         setChange(Number(payment) - totalPrice);
+        console.log(totalPrice);
     };
 
     const handleClickDelete = () => {
@@ -30,8 +31,8 @@ export default function Footer() {
                 elevation: 20,
             }}
         >
-            <Paymente>
-                <Text style={{ fontSize: 22 }}>Pagamento:</Text>
+            <Payment>
+                <Text>Pagamento:</Text>
 
                 <Input
                     onChangeText={setPayment}
@@ -42,16 +43,16 @@ export default function Footer() {
                 />
 
                 <Button onPress={() => handleClickCalculate()}>
-                    <Text style={{ color: '#f2f2f2' }}>Calcular</Text>
+                    <ButtonText>Calcular</ButtonText>
                 </Button>
 
                 <Button onPress={() => handleClickDelete()}>
-                    <Text style={{ color: '#f2f2f2' }}>Apagar</Text>
+                    <ButtonText>Apagar</ButtonText>
                 </Button>
-            </Paymente>
+            </Payment>
 
-            <Text style={{ fontSize: 22 }}>Total: R${totalPrice.toFixed(2).replace('.', ',')}</Text>
-            <MoneyChange>Troco: R${change.toFixed(2).replace('.', ',')}</MoneyChange>
+            <Text>Total: R${totalPrice.toFixed(2).replace('.', ',')}</Text>
+            <Text>Troco: R${change.toFixed(2).replace('.', ',')}</Text>
         </Container>
     );
 }
