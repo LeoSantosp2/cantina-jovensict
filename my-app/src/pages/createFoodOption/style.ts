@@ -27,7 +27,7 @@ export const ContainerInput = styled.View`
 `;
 
 export const Input = styled.TextInput`
-    width: 180px;
+    width: 250px;
     margin-top: 5px;
     padding: 10px;
     border-radius: 5px;

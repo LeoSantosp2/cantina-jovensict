@@ -1,15 +1,14 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Toast from 'react-native-toast-message';
+import uuid from 'react-native-uuid';
 
-import { Context } from '../../context';
+import { getRealm } from '../../databases/realm';
 
 import { Container, InsertFood, Input, LabelInput, ContainerInput, Button, ButtonText } from './style';
 
 export default function CreateFoodOption() {
     const [foodName, setFoodName] = useState('');
     const [foodPrice, setFoodPrice] = useState('');
-
-    const { settingFoodOptions, showToast } = useContext(Context);
 
     useEffect(() => {
         let newFoodPrice = foodPrice;
@@ -18,13 +17,26 @@ export default function CreateFoodOption() {
         setFoodPrice(newFoodPrice);
     }, [foodPrice]);
 
-    const handleClickAdd = () => {
-        settingFoodOptions(foodName, Number(foodPrice));
+    const handleClickAdd = async () => {
+        const realm = await getRealm();
 
-        setFoodName('');
-        setFoodPrice('');
+        try {
+            realm.write(() => {
+                realm.create('FoodOption', {
+                    _id: uuid.v4(),
+                    _name: foodName,
+                    price: foodPrice,
+                    originalPrice: foodPrice,
+                });
+            });
 
-        showToast('Refeição cadastrada com sucesso!');
+            setFoodName('');
+            setFoodPrice('');
+        } catch (e) {
+            console.log(e);
+        } finally {
+            realm.close();
+        }
     };
 
     return (
@@ -43,17 +55,17 @@ export default function CreateFoodOption() {
                 }}
             >
                 <ContainerInput>
-                    <LabelInput>Comida:</LabelInput>
-                    <Input value={foodName} onChangeText={setFoodName} placeholder="Insira a Comida" />
+                    <LabelInput>Nome da Refeição:</LabelInput>
+                    <Input value={foodName} onChangeText={setFoodName} placeholder="Nome da Refeição" />
                 </ContainerInput>
 
                 <ContainerInput>
-                    <LabelInput>Preço:</LabelInput>
+                    <LabelInput>Preço da Refeição:</LabelInput>
                     <Input
                         value={foodPrice}
                         onChangeText={setFoodPrice}
                         keyboardType="numeric"
-                        placeholder="Insira o Preço"
+                        placeholder="Preço da Refeição"
                     />
                 </ContainerInput>
 
