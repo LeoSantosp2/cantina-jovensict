@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { NavigationContainer } from '@react-navigation/native';
 
 import CreateFoodOption from '../pages/createFoodOption';
-import { ShowFoodOption } from '../pages/foodOption';
+import ShowFoodOption from '../pages/showFoodOption';
 
 import LogoJovensIct from '../images/logo-jovensict.png';
 
