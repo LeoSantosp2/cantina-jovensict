@@ -1,15 +1,11 @@
-import React, { createContext, useState, ReactNode } from 'react';
-// import AsyncStorage from '@react-native-async-storage/async-storage';
-// import uuid from 'react-native-uuid';
+import React, { createContext, useState } from 'react';
 import Toast from 'react-native-toast-message';
+
+import { ContextProviderProps } from '../interfaces/contextProviderProps';
 
 export const Context = createContext({});
 
-interface Props {
-    children: ReactNode;
-}
-
-const ContextProvider = ({ children }: Props) => {
+const ContextProvider = ({ children }: ContextProviderProps) => {
     const [totalPrice, setTotalPrice] = useState(0);
 
     const calcTotalPrice = (price: number) => {

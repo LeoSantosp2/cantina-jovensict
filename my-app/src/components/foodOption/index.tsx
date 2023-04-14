@@ -21,6 +21,7 @@ import {
 export default function FoodOption({
     _id,
     _name,
+    price,
     originalPrice,
     onPress,
 }: FoodOptionProps) {
@@ -59,31 +60,6 @@ export default function FoodOption({
         setFoodPrice(0);
     };
 
-    const modifyFoodPrice = async () => {
-        const realm = await getRealm();
-
-        const data = {
-            _id: _id,
-            _name: foodName,
-            price: String(foodPrice),
-            originalPrice: originalPrice,
-        };
-
-        try {
-            realm.write(() => {
-                realm.create('FoodOption', data, Realm.UpdateMode.Modified);
-            });
-
-            setTimeout(() => {
-                totalPrice();
-            }, 1);
-        } catch (e) {
-            console.log(e);
-        } finally {
-            realm.close();
-        }
-    };
-
     const totalPrice = async () => {
         const realm = await getRealm();
 
@@ -102,6 +78,29 @@ export default function FoodOption({
         } finally {
             realm.close();
         }
+    };
+
+    const modifyFoodPrice = async () => {
+        const realm = await getRealm();
+
+        const data = {
+            _id: _id,
+            price: String(foodPrice),
+        };
+
+        try {
+            realm.write(() => {
+                realm.create('FoodOption', data, Realm.UpdateMode.Modified);
+            });
+        } catch (e) {
+            console.log(e);
+        } finally {
+            realm.close();
+        }
+
+        setTimeout(() => {
+            totalPrice();
+        }, 1);
     };
 
     useEffect(() => {
@@ -138,7 +137,7 @@ export default function FoodOption({
                 <Price>R${foodPrice.toFixed(2).replace('.', ',')}</Price>
 
                 <ButtonDelete onPress={() => handleClickClear()}>
-                    <ButtonTextDelete>Apagar</ButtonTextDelete>
+                    <ButtonTextDelete>Limpar</ButtonTextDelete>
                 </ButtonDelete>
             </ContainerCount>
         </ContainerFoodOption>

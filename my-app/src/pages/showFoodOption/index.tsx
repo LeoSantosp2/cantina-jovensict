@@ -68,7 +68,6 @@ const ShowFoodOption = () => {
                 )}
                 keyExtractor={(item) => item._id}
                 style={{
-                    marginBottom: 128,
                     shadowColor: '#000000',
                     shadowOffset: { width: -2, height: 4 },
                     shadowOpacity: 0.5,

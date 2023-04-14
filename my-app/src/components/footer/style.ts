@@ -1,24 +1,24 @@
 import styled from 'styled-components/native';
 
-import * as colors from '../../config/color';
+import { Colors } from '../../config/color';
 
 export const Container = styled.View`
-    width: 100%;
     padding-left: 10px;
-    padding-top: 10px;
-    position: absolute;
-    bottom: 0%;
-    background-color: ${colors.white};
+    background-color: ${Colors.white};
 `;
 
 export const Payment = styled.View`
+    padding: 10px 0px;
     flex-direction: row;
-    justify-content: flex-start;
     align-items: center;
 `;
 
-export const Text = styled.Text`
-    margin: 5px 0px;
+export const TextPayment = styled.Text`
+    font-size: 22px;
+`;
+
+export const TextValues = styled.Text`
+    padding-bottom: 10px;
     font-size: 22px;
 `;
 
@@ -28,8 +28,8 @@ export const Input = styled.TextInput`
     margin: 0px 10px;
     padding-left: 10px;
     border-radius: 5px;
-    background-color: ${colors.black};
-    color: ${colors.white};
+    background-color: ${Colors.black};
+    color: ${Colors.white};
 `;
 
 export const Button = styled.TouchableOpacity`
@@ -39,14 +39,9 @@ export const Button = styled.TouchableOpacity`
     border-radius: 4px;
     justify-content: center;
     align-items: center;
-    background-color: ${colors.black};
+    background-color: ${Colors.black};
 `;
 
 export const ButtonText = styled.Text`
-    color: ${colors.white};
-`;
-
-export const MoneyChange = styled.Text`
-    margin: 10px 0px;
-    font-size: 22px;
+    color: ${Colors.white};
 `;

@@ -1,24 +1,24 @@
 import styled from 'styled-components/native';
 
-import * as colors from '../../config/color';
+import { Colors } from '../../config/color';
 
 export const Container = styled.View`
     width: 100%;
     height: 100%;
     justify-content: center;
     align-items: center;
-    background-color: ${colors.white};
+    background-color: ${Colors.white};
 `;
 
 export const LabelInput = styled.Text`
     font-size: 22px;
-    color: ${colors.white};
+    color: ${Colors.white};
 `;
 
 export const InsertFood = styled.View`
     width: 90%;
     border-radius: 5px;
-    background-color: ${colors.black};
+    background-color: ${Colors.black};
 `;
 
 export const ContainerInput = styled.View`
@@ -31,7 +31,7 @@ export const Input = styled.TextInput`
     margin-top: 5px;
     padding: 10px;
     border-radius: 5px;
-    background-color: ${colors.white};
+    background-color: ${Colors.white};
 `;
 
 export const Button = styled.TouchableOpacity`
@@ -41,9 +41,9 @@ export const Button = styled.TouchableOpacity`
     border-radius: 5px;
     justify-content: center;
     align-items: center;
-    background-color: ${colors.white};
+    background-color: ${Colors.white};
 `;
 
 export const ButtonText = styled.Text`
-    color: ${colors.black};
+    color: ${Colors.black};
 `;

@@ -2,18 +2,24 @@ import React, { useState, useContext } from 'react';
 
 import { Context } from '../../context';
 
-import { Container, Payment, Input, Button, Text, ButtonText } from './style';
+import {
+    Container,
+    Payment,
+    Input,
+    Button,
+    TextValues,
+    ButtonText,
+    TextPayment,
+} from './style';
 
 export default function Footer() {
     const [payment, setPayment] = useState('');
     const [change, setChange] = useState(0);
-    const [total, setTotal] = useState(0);
 
     const { totalPrice } = useContext(Context);
 
     const handleClickCalculate = async () => {
         setChange(Number(payment) - totalPrice);
-        console.log(totalPrice);
     };
 
     const handleClickDelete = () => {
@@ -32,7 +38,7 @@ export default function Footer() {
             }}
         >
             <Payment>
-                <Text>Pagamento:</Text>
+                <TextPayment>Pagamento:</TextPayment>
 
                 <Input
                     onChangeText={setPayment}
@@ -47,12 +53,16 @@ export default function Footer() {
                 </Button>
 
                 <Button onPress={() => handleClickDelete()}>
-                    <ButtonText>Apagar</ButtonText>
+                    <ButtonText>Limpar</ButtonText>
                 </Button>
             </Payment>
 
-            <Text>Total: R${totalPrice.toFixed(2).replace('.', ',')}</Text>
-            <Text>Troco: R${change.toFixed(2).replace('.', ',')}</Text>
+            <TextValues>
+                Total: R${totalPrice.toFixed(2).replace('.', ',')}
+            </TextValues>
+            <TextValues>
+                Troco: R${change.toFixed(2).replace('.', ',')}
+            </TextValues>
         </Container>
     );
 }

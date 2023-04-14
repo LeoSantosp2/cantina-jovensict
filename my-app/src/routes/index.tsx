@@ -6,9 +6,9 @@ import { NavigationContainer } from '@react-navigation/native';
 import CreateFoodOption from '../pages/createFoodOption';
 import ShowFoodOption from '../pages/showFoodOption';
 
-import LogoJovensIct from '../images/logo-jovensict.png';
+import LogoJovensIct from '../assets/images/logo-jovensict.png';
 
-import { Img } from '../styles/globalStyles';
+import { Img } from '../assets/styles/globalStyles';
 
 const Tab = createBottomTabNavigator();
 
@@ -25,10 +25,14 @@ export default function Routes() {
                         if (route.name === 'Inserir Refeição') {
                             iconName = focused ? 'food' : 'food-outline';
                         } else if (route.name === 'Cardápio') {
-                            iconName = focused ? 'book-open' : 'book-open-outline';
+                            iconName = focused
+                                ? 'book-open'
+                                : 'book-open-outline';
                         }
 
-                        return <Icon name={iconName} size={size} color={color} />;
+                        return (
+                            <Icon name={iconName} size={size} color={color} />
+                        );
                     },
                     tabBarLabelStyle: { fontSize: 12 },
                     headerStyle: {
@@ -46,7 +50,10 @@ export default function Routes() {
                     headerLeft: () => <Img source={LogoJovensIct} />,
                 })}
             >
-                <Tab.Screen name="Inserir Refeição" component={CreateFoodOption} />
+                <Tab.Screen
+                    name="Inserir Refeição"
+                    component={CreateFoodOption}
+                />
                 <Tab.Screen name="Cardápio" component={ShowFoodOption} />
             </Tab.Navigator>
         </NavigationContainer>
