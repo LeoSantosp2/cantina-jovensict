@@ -2,27 +2,37 @@
   "expo": {
     "name": "Cantina JovensICT",
     "slug": "my-app",
-    "version": "1.0.0",
+    "version": "1.4.4",
     "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
     "splash": {
-      "resizeMode": "contain"
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#FFFFFF"
     },
     "assetBundlePatterns": [
       "**/*"
     ],
-    "android": {
-      "package": "com.cantinaict.cantinajovensict"
-    },
     "ios": {
       "supportsTablet": true
     },
-    "runtimeVersion": {
-      "policy": "sdkVersion"
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#FFFFFF"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
     },
     "extra": {
       "eas": {
         "projectId": "4c6845f6-51d8-49bf-9caa-56692da0171f"
       }
+    },
+    "runtimeVersion": {
+      "policy": "sdkVersion"
     },
     "updates": {
       "url": "https://u.expo.dev/4c6845f6-51d8-49bf-9caa-56692da0171f"
