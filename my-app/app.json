@@ -1,15 +1,16 @@
 {
   "expo": {
-    "name": "my-app",
+    "name": "Cantina JovensICT",
     "slug": "my-app",
-    "version": "1.0.0",
+    "scheme": "cantina-jovens-ict",
+    "version": "1.5.2",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#FFFFFF"
     },
     "assetBundlePatterns": [
       "**/*"
@@ -20,11 +21,23 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      }
+        "backgroundColor": "#FFFFFF"
+      },
+      "package": "com.cantinaict.cantinajovensict"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "4c6845f6-51d8-49bf-9caa-56692da0171f"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/4c6845f6-51d8-49bf-9caa-56692da0171f"
     }
   }
 }
